@@ -18,11 +18,11 @@
   <div class="content">
     <form (ngSubmit)="login()">
       <ion-item>
-        <ion-label color="primary" floating>{{ePassbook?'NIC / PASSPORT' : 'LOGIN ID'}}</ion-label>
+        <ion-label color="dark" floating>{{ePassbook?'NIC / PASSPORT' : 'LOGIN ID'}}</ion-label>
         <ion-input [(ngModel)]="data.id" name="id"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label color="primary" floating>{{ePassbook?'ACCESS CODE' : 'PASSWORD'}}</ion-label>
+        <ion-label color="dark" floating>{{ePassbook?'ACCESS CODE' : 'PASSWORD'}}</ion-label>
         <ion-input type="password" [(ngModel)]="data.password" name="password"></ion-input>
       </ion-item>
       <ion-item no-lines>

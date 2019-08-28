@@ -1,23 +1,32 @@
 <ion-nav [root]="rootPage"></ion-nav>
 <ion-menu [content]="content">
-        <ion-header>
-          <ion-toolbar>
-            <ion-title>Menu</ion-title>
-          </ion-toolbar>
-        </ion-header>
+  <ion-header>
+      <ion-toolbar>
+          <ion-list>
+              <ion-item padding-vertical color="menuHeader">
+                  <ion-avatar item-start (cilck)="goProfile()">
+                      <img src='assets/imgs/profile1.png'>
+                  </ion-avatar>
+                  <h2 style="font-weight:normal">Jhon Doe</h2>
+                  <h6 style="font-weight:normal">No 34/5, New Kandy Road,</h6>
+                  <h6 style="font-weight:normal">Malabe</h6>
+              </ion-item>
+          </ion-list>
+      </ion-toolbar>
+  </ion-header>
         <ion-content>
           <ion-list>
             <button ion-item (click)="openPage(homePage)">
-              Home
+              <ion-icon name="md-paper" color="dark"></ion-icon>
+              DASHBOARD
             </button>
             <button ion-item (click)="openPage(friendsPage)">
-              Friends
+              <ion-icon name="ios-card" color="dark"></ion-icon>
+              CREDIT CARDS
             </button>
             <button ion-item (click)="openPage(eventsPage)">
-              Events
-            </button>
-            <button menuClose ion-item >
-              Close Menu
+              <ion-icon name="md-filing" color="dark"></ion-icon>
+              INVESTMENTS & LOANS
             </button>
           </ion-list>
         </ion-content>

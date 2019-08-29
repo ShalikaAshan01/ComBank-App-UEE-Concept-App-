@@ -41,7 +41,7 @@ export class LoginPage {
     if (this.ePassbook) {
       this.navCtrl.push('InterestRatesPage');
     } else {
-      this.navCtrl.push('HelpPage');
+      this.navCtrl.push('ContactUsPage');
     }
   }
 }

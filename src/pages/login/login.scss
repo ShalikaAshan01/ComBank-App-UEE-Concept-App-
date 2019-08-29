@@ -4,16 +4,19 @@
 }
 .segment-activated {
   color: #1e2023 !important;
-  border-color: #106DB8 !important;
+  border-color: #006EB9 !important;
 }
 .content{
   margin-top: 10px;
   padding: 10px;
 }
-button{
+
+.login-button {
   margin-top: 35px !important;
+  background: #006EB9;
 }
-ion-item{
+
+.login-ion-item {
   margin: 10px 0 10px !important;
 }
 .wrapper{
@@ -23,9 +26,11 @@ ion-item{
   width: 70%;
   float: right;
 }
-ion-segment{
+
+.login-ion-segment {
   margin-top: 120px;
 }
-ion-footer{
+
+.login-ion-footer {
   padding-bottom: 9px;
 }

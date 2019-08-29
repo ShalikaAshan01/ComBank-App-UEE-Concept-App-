@@ -1,5 +1,5 @@
 <ion-nav [root]="rootPage"></ion-nav>
-<ion-menu [content]="content">
+<ion-menu id="menuSlider" [content]="content">
   <ion-header>
       <ion-toolbar>
           <ion-list>
@@ -16,17 +16,9 @@
   </ion-header>
         <ion-content>
           <ion-list>
-            <button ion-item (click)="openPage(homePage)">
-              <ion-icon name="md-paper" color="dark"></ion-icon>
-              DASHBOARD
-            </button>
-            <button ion-item (click)="openPage(friendsPage)">
-              <ion-icon name="ios-card" color="dark"></ion-icon>
-              CREDIT CARDS
-            </button>
-            <button ion-item (click)="openPage(eventsPage)">
-              <ion-icon name="md-filing" color="dark"></ion-icon>
-              INVESTMENTS & LOANS
+            <button *ngFor="let page of pages" ion-item (click)=openPage(page.component)>
+              <ion-icon name={{page.iconName}} color="dark"></ion-icon>
+              {{page.title}}
             </button>
           </ion-list>
         </ion-content>

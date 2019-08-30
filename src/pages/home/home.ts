@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import { DashboardPage } from '../mobileBanking/dashboard/dashboard';
+import { DashboardPage } from '../dashboard/dashboard';
+import { FundTransferPage } from '../fund-transfer/fund-transfer';
 
 @Component({
   selector: 'page-home',
@@ -15,6 +16,10 @@ export class HomePage {
 
   goToDashboard() {
     this.navCtrl.push(DashboardPage);
+  }
+
+  goToFundTransfer() {
+    this.navCtrl.push(FundTransferPage);
   }
 
 }

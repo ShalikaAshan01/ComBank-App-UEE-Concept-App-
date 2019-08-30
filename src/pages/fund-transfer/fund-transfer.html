@@ -1,0 +1,144 @@
+<!--
+  Generated template for the FundTransferPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>FUND TRANSFER</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-segment [(ngModel)]="options">
+    <ion-segment-button value="transfer">
+      Make Transfer
+    </ion-segment-button>
+    <ion-segment-button value="history">
+      History
+    </ion-segment-button>
+  </ion-segment>
+
+  <div [ngSwitch]="options">
+    <ion-list *ngSwitchCase="'transfer'">
+      <form (ngSubmit)="makeTransfer()">
+        <ion-card class="margin-vertical">
+          <ion-card-content>
+            <h2>Fund Transfer Type</h2>
+            <ion-item>
+              <ion-label>Select type</ion-label>
+              <ion-select [(ngModel)]="type" name="type">
+                <ion-option value="Own Account">Own Account</ion-option>
+                <ion-option value="Third Party">Third-Party Registered</ion-option>
+              </ion-select>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card class="margin-vertical">
+          <ion-card-content>
+            <h2>Pay From</h2>
+            <ion-item>
+              <ion-label>Select Account</ion-label>
+              <ion-select [(ngModel)]="payFrom" name="payFrom" [ngModelOptions]="{standalone: true}">
+                <div *ngFor="let account of userAccounts">
+                  <ion-option value={{account.accountNumber}}>
+                    {{account.accountNumber}}
+                  </ion-option>
+                </div>
+              </ion-select>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card class="margin-vertical">
+          <ion-card-content>
+            <h2>Pay To</h2>
+            <ion-item>
+              <ion-label>Select Account</ion-label>
+              <ion-select *ngIf="type=='Own Account'" [(ngModel)]="payTo" name="payTo"
+                [ngModelOptions]="{standalone: true}">
+                <div *ngFor="let account of userAccounts">
+                  <ion-option value={{account.accountNumber}}>
+                    {{account.accountNumber}}
+                  </ion-option>
+                </div>
+              </ion-select>
+              <ion-select *ngIf="type=='Third Party'" [(ngModel)]="payTo" name="payTo"
+                [ngModelOptions]="{standalone: true}">
+                <div *ngFor="let account of thirdPartyAccounts">
+                  <ion-option value={{account.accountNumber}}>
+                    {{account.accountNumber}}
+                  </ion-option>
+                </div>
+              </ion-select>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card class="margin-vertical">
+          <ion-card-content>
+            <h2>Amount</h2>
+            <ion-item>
+              <ion-label fixed>Enter Amount</ion-label>
+              <ion-input type="number" [(ngModel)]="amount" name="amount"></ion-input>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+
+        <button class="btn-primary" ion-button type="submit" block>Transfer</button>
+      </form>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'history'">
+
+      <ion-card *ngFor="let transfer of transferDetails" class="margin-vertical">
+
+        <ion-row>
+          <ion-col align-self-center>
+            <ion-item>
+              <h4>Transfered from</h4>
+              <h2>{{transfer.paidFrom}}</h2>
+            </ion-item>
+          </ion-col>
+          <ion-col align-self-center>
+            <ion-item text-right>
+              <p>To {{transfer.type}}</p>
+              <h4>{{transfer.paidTo}}</h4>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <ion-item text-left>
+              <h3>
+                <strong>LKR {{transfer.amount}}</strong>
+              </h3>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <button ion-button icon-start clear small>
+              <ion-icon name="checkmark-circle" color="secondary"></ion-icon>
+              <div class="color-secondary">{{transfer.status}}</div>
+            </button>
+          </ion-col>
+          <ion-col>
+          </ion-col>
+          <ion-col align-self-center text-center>
+            <ion-note>
+              2019-08-25
+            </ion-note>
+          </ion-col>
+        </ion-row>
+
+      </ion-card>
+
+    </ion-list>
+  </div>
+
+</ion-content>

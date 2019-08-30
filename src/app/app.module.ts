@@ -6,13 +6,15 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { DashboardPage } from '../pages/mobileBanking/dashboard/dashboard';
+import { DashboardPage } from '../pages/dashboard/dashboard';
+import { FundTransferPage } from '../pages/fund-transfer/fund-transfer';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    DashboardPage
+    DashboardPage,
+    FundTransferPage
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,8 @@ import { DashboardPage } from '../pages/mobileBanking/dashboard/dashboard';
   entryComponents: [
     MyApp,
     HomePage,
-    DashboardPage
+    DashboardPage,
+    FundTransferPage
   ],
   providers: [
     StatusBar,

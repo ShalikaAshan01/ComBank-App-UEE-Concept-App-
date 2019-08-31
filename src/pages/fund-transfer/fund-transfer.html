@@ -10,8 +10,8 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content *ngIf="notComplete" padding>
-  <div>
+<ion-content>
+  <div style="padding: 16px" *ngIf="notComplete">
     <ion-segment [(ngModel)]="options">
       <ion-segment-button value="transfer">
         Make Transfer
@@ -141,13 +141,10 @@
     </div>
   </div>
 
-</ion-content>
+  <div class="success" *ngIf="!notComplete">
 
-<ion-content *ngIf="!notComplete">
+    <ion-grid>
 
-  <div class="success.">
-
-    <!-- <ion-grid>
       <ion-row align-items-center>
         <ion-col text-center>
 
@@ -165,34 +162,13 @@
           <h3 style="color: #ffffff">Transaction ID : 5487412457</h3>
         </ion-col>
       </ion-row>
-      <ion-row align-items-center>
-        <ion-col text-center>
 
-        </ion-col>
-      </ion-row>
-      <ion-row align-items-center>
-        <ion-col text-center>
+    </ion-grid>
 
-        </ion-col>
-      </ion-row>
-      <ion-row align-items-center>
-        <ion-col text-center>
-
-        </ion-col>
-      </ion-row>
-      <ion-row align-items-center>
-        <ion-col text-center>
-          <button (click)="okay()" ion-button class="btn-white" block>Got it</button>
-        </ion-col>
-      </ion-row>
-
-    </ion-grid> -->
-
-
-
-    <!-- <ion-footer padding position="bottom" no-shadow>
+    <ion-footer padding position="bottom" no-shadow>
       <button (click)="okay()" ion-button class="btn-white" block>Got it</button>
-    </ion-footer> -->
+    </ion-footer>
+
   </div>
 
 </ion-content>

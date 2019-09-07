@@ -58,4 +58,7 @@ export class DashboardPage {
     this.total = temp;
   }
 
+  openNotificationPage(){
+    this.navCtrl.push('NotificationsPage');
+  }
 }

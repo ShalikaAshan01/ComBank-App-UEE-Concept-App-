@@ -110,4 +110,8 @@ export class FundTransferPage {
   //     i.substr(j).replace(/(\decSep{3})(?=\decSep)/g, "$1" + thouSep) +
   //     (decPlaces ? decSep + Math.abs(number - i).toFixed(decPlaces).slice(2) : "");
   // }
+
+  openNotificationPage(){
+    this.navCtrl.push('NotificationsPage');
+  }
 }

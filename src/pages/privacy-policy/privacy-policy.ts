@@ -22,4 +22,7 @@ export class PrivacyPolicyPage {
     console.log('ionViewDidLoad PrivacyPolicyPage');
   }
 
+  openNotificationPage(){
+    this.navCtrl.push('NotificationsPage');
+  }
 }

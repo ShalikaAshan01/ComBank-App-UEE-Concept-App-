@@ -61,4 +61,8 @@ export class InterestRatesPage {
         break;
     }
   }
+
+  openNotificationPage(){
+    this.navCtrl.push('NotificationsPage');
+  }
 }

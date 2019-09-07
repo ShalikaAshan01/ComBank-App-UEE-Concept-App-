@@ -22,4 +22,7 @@ export class HelpPage {
     console.log('ionViewDidLoad HelpPage');
   }
 
+  openNotificationPage(){
+    this.navCtrl.push('NotificationsPage');
+  }
 }

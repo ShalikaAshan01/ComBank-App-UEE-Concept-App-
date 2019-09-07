@@ -436,4 +436,7 @@ export class LocateUsPage {
     this.viewCtrl.dismiss();
   }
 
+  openNotificationPage(){
+    this.navCtrl.push('NotificationsPage');
+  }
 }

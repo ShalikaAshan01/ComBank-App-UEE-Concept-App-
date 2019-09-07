@@ -22,4 +22,7 @@ export class ExchangeRatesPage {
     console.log('ionViewDidLoad ExchangeRatesPage');
   }
 
+  openNotificationPage(){
+    this.navCtrl.push('NotificationsPage');
+  }
 }

@@ -14,7 +14,7 @@ import { IonicPage, NavController, Nav, App } from 'ionic-angular';
   templateUrl: 'menu-slider-passbook.html',
 })
 export class MenuSliderPassbookPage {
-  rootPage = 'NotificationsPage';
+  rootPage = 'AccountListPage';
 
   @ViewChild(Nav) nav: Nav;
 
@@ -25,8 +25,8 @@ export class MenuSliderPassbookPage {
 
   ionViewDidLoad() {
     this.pages = [
-      { title: 'DASHBOARD', pageName: 'SettingsPage', icon: 'md-analytics' },
-      { title: 'Notifications', pageName: 'NotificationsPage', icon: 'md-notifications' },
+      { title: 'ACCOUNT LIST', pageName: 'AccountListPage', icon: 'md-analytics' },
+      { title: 'NOTIFICATIONS', pageName: 'NotificationsPage', icon: 'md-notifications' },
       { title: 'LOCATE US', pageName: 'LocateUsPage', icon: 'md-pin' },
       { title: 'EXCHANGE RATES', pageName: 'ExchangeRatesPage', icon: 'md-trending-up' },
       { title: 'INTEREST RATES', pageName: 'InterestRatesPage', icon: 'md-podium' },

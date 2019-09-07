@@ -24,4 +24,8 @@ export class ContactUsPage {
     //   .catch(err => console.log('Error launching dialer', err));
     console.log("calling", number)
   }
+
+  openNotificationPage(){
+    this.navCtrl.push('NotificationsPage');
+  }
 }

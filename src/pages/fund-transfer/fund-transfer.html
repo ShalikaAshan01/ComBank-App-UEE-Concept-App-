@@ -91,55 +91,56 @@
       </ion-list>
 
       <ion-list *ngSwitchCase="'history'">
+        <div>
+          <ion-card *ngFor="let transfer of transferDetails" class="custom-ion-card margin-vertical">
 
-        <ion-card *ngFor="let transfer of transferDetails" class="margin-vertical">
+            <ion-row>
+              <ion-col align-self-center>
+                <ion-item>
+                  <h4>Transfered from</h4>
+                  <h2>{{transfer.paidFrom}}</h2>
+                </ion-item>
+              </ion-col>
+              <ion-col align-self-center>
+                <ion-item text-right>
+                  <h4>To {{transfer.type}}</h4>
+                  <h4><b>{{transfer.paidTo}}</b></h4>
+                </ion-item>
+              </ion-col>
+            </ion-row>
 
-          <ion-row>
-            <ion-col align-self-center>
-              <ion-item>
-                <h4>Transfered from</h4>
-                <h2>{{transfer.paidFrom}}</h2>
-              </ion-item>
-            </ion-col>
-            <ion-col align-self-center>
-              <ion-item text-right>
-                <h4>To {{transfer.type}}</h4>
-                <h4><b>{{transfer.paidTo}}</b></h4>
-              </ion-item>
-            </ion-col>
-          </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-item text-left>
+                  <h3>
+                    <strong>LKR {{transfer.amount}}</strong>
+                  </h3>
+                </ion-item>
+              </ion-col>
+            </ion-row>
 
-          <ion-row>
-            <ion-col>
-              <ion-item text-left>
-                <h3>
-                  <strong>LKR {{transfer.amount}}</strong>
-                </h3>
-              </ion-item>
-            </ion-col>
-          </ion-row>
+            <ion-row>
+              <ion-col>
+                <button ion-button icon-start clear small>
+                  <h4>
+                    <ion-icon name="checkmark-circle" color="secondary"></ion-icon>
+                  </h4>
+                  <h4>
+                    <div class="color-secondary">{{transfer.status}}</div>
+                  </h4>
+                </button>
+              </ion-col>
+              <ion-col align-self-center text-right>
+                <ion-item text-right>
+                  <ion-note>
+                    {{currentDate}}
+                  </ion-note>
+                </ion-item>
+              </ion-col>
+            </ion-row>
 
-          <ion-row>
-            <ion-col>
-              <button ion-button icon-start clear small>
-                <h4>
-                  <ion-icon name="checkmark-circle" color="secondary"></ion-icon>
-                </h4>
-                <h4>
-                  <div class="color-secondary">{{transfer.status}}</div>
-                </h4>
-              </button>
-            </ion-col>
-            <ion-col align-self-center text-right>
-              <ion-item text-right>
-                <ion-note>
-                  {{currentDate}}
-                </ion-note>
-              </ion-item>
-            </ion-col>
-          </ion-row>
-
-        </ion-card>
+          </ion-card>
+        </div>
 
       </ion-list>
     </div>

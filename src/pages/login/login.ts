@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Events, MenuController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Events, MenuController, App } from 'ionic-angular';
 
 /**
  * Generated class for the LoginPage page.
@@ -22,7 +22,7 @@ export class LoginPage {
     password: '',
     isChecked: false
   };
-  constructor(public navCtrl: NavController, public navParams: NavParams, public events: Events, public menuCtrl: MenuController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public events: Events, public menuCtrl: MenuController, public appCtrl: App) {
     this.menuCtrl.enable(false, 'menuSlider');
   }
 
@@ -37,11 +37,9 @@ export class LoginPage {
   login() {
     console.log(this.data)
     if(this.ePassbook){
-      this.events.publish('type:ePassbook');
-      this.navCtrl.setRoot('NotificationsPage');
+      this.navCtrl.setRoot('MenuSliderPassbookPage');
     }else{
-      this.events.publish('type:mobileBanking');
-      this.navCtrl.setRoot('NotificationsPage');
+      this.navCtrl.setRoot('MenuSliderMobilebankingPage');
     }
   }
 }

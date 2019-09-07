@@ -6,7 +6,7 @@
     </div>
   </div>
 
-  <ion-segment (ionChange)="segmentChanged($event)" [(ngModel)]="segment">
+  <ion-segment (ionChange)="segmentChanged($event)" [(ngModel)]="segment" class="login-ion-segment">
     <ion-segment-button value="passbook">
       <ion-label>ePassbook</ion-label>
     </ion-segment-button>
@@ -17,23 +17,23 @@
 
   <div class="content">
     <form (ngSubmit)="login()">
-      <ion-item>
+      <ion-item class="login-ion-item">
         <ion-label color="dark" floating>{{ePassbook?'NIC / PASSPORT' : 'LOGIN ID'}}</ion-label>
         <ion-input [(ngModel)]="data.id" name="id"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item class="login-ion-item">
         <ion-label color="dark" floating>{{ePassbook?'ACCESS CODE' : 'PASSWORD'}}</ion-label>
         <ion-input type="password" [(ngModel)]="data.password" name="password"></ion-input>
       </ion-item>
-      <ion-item no-lines>
+      <ion-item class="login-ion-item" no-lines>
         <ion-label>I accept the Terms and Conditions</ion-label>
         <ion-checkbox color="primary" checked slot="start" [(ngModel)]="data.isChecked" name="isChecked"></ion-checkbox>
       </ion-item>
-      <button ion-button color="primary" block type="submit">Login</button>
+      <button block class="login-button" ion-button type="submit">Login</button>
     </form>
   </div>
 
-  <ion-footer no-border>
+  <ion-footer class="login-ion-footer" no-border>
     <ion-card color="light">
       <ion-card-content>
         <strong>For Registration, Please contact</strong>

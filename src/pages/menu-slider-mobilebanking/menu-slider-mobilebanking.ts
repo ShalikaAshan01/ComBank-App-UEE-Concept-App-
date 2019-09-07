@@ -25,8 +25,16 @@ export class MenuSliderMobilebankingPage {
 
   ionViewDidLoad() {
     this.pages = [
-      { title: 'Notifications', pageName: 'NotificationsPage', icon: 'md-notifications' },
-      { title: 'Settings', pageName: 'SettingsPage', icon: 'md-settings' },
+      { title: 'DASHBOARD', pageName: 'SettingsPage', icon: 'md-analytics' },
+      { title: 'FUND TRANSFER', pageName: 'LocateUsPage', icon: 'md-repeat' },
+      { title: 'NOTIFICATIONS', pageName: 'NotificationsPage', icon: 'md-notifications' },
+      { title: 'LOCATE US', pageName: 'LocateUsPage', icon: 'md-pin' },
+      { title: 'EXCHANGE RATES', pageName: 'ExchangeRatesPage', icon: 'md-trending-up' },
+      { title: 'INTEREST RATES', pageName: 'InterestRatesPage', icon: 'md-podium' },
+      { title: 'HELP', pageName: 'HelpPage', icon: 'md-help-circle' },
+      { title: 'PRIVACY POLICY', pageName: 'PrivacyPolicyPage', icon: 'md-lock' },
+      { title: 'CONTACT US', pageName: 'ContactUsPage', icon: 'md-information-circle' },
+      { title: 'MOBILE BANKING SETTINGS', pageName: 'MobileBankingProfileSettingsPage', icon: 'md-settings' },
     ];
   }
 

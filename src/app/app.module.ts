@@ -7,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ConnectivityServiceProvider } from '../providers/connectivity-service/connectivity-service';
+import {RateProvider} from '../providers/rate/rate';
 import { Geolocation }              from '@ionic-native/geolocation';
 import { HttpModule }               from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
@@ -34,7 +35,8 @@ import { Network }                  from '@ionic-native/network';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ConnectivityServiceProvider,
     Geolocation,
-    Network
+    Network,
+    RateProvider
   ]
 })
 export class AppModule {}

@@ -25,9 +25,15 @@ export class MenuSliderPassbookPage {
 
   ionViewDidLoad() {
     this.pages = [
+      { title: 'DASHBOARD', pageName: 'SettingsPage', icon: 'md-analytics' },
       { title: 'Notifications', pageName: 'NotificationsPage', icon: 'md-notifications' },
-      { title: 'Locate Us', pageName: 'LocateUsPage', icon: 'md-pin' },
-      { title: 'Settings', pageName: 'SettingsPage', icon: 'md-settings' },
+      { title: 'LOCATE US', pageName: 'LocateUsPage', icon: 'md-pin' },
+      { title: 'EXCHANGE RATES', pageName: 'ExchangeRatesPage', icon: 'md-trending-up' },
+      { title: 'INTEREST RATES', pageName: 'InterestRatesPage', icon: 'md-podium' },
+      { title: 'HELP', pageName: 'HelpPage', icon: 'md-help-circle' },
+      { title: 'PRIVACY POLICY', pageName: 'PrivacyPolicyPage', icon: 'md-lock' },
+      { title: 'CONTACT US', pageName: 'ContactUsPage', icon: 'md-information-circle' },
+      { title: 'ePASSBOOK SETTINGS', pageName: 'SettingsPage', icon: 'md-settings' },
     ];
   }
 

@@ -6,6 +6,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { HomePage } from '../pages/home/home';
     BrowserModule,
     IonicModule.forRoot(MyApp, {
     tabsPlacement: 'top',
+    NgxPaginationModule,
+    FormsModule
   })
   ],
   bootstrap: [IonicApp],

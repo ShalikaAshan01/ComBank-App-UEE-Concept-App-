@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AccountsPage } from '../accounts/accounts';
 
 /**
  * Generated class for the AccountListPage page.
@@ -26,6 +27,11 @@ export class AccountListPage {
     ];
   }
 
+  navAcc( account: any ){
+    this.navCtrl.push('AccountsPage', {
+      account: account
+    });
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad AccountListPage');
   }

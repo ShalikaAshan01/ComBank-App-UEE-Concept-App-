@@ -16,13 +16,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class ETransactionsPage {
 
   transactions:any;
+  account:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.account = navParams.get('account');
+    
     this.transactions = [
-      {"heading":"Pos Transaction", "content":"REV POS trans 205000389340 13/08/2019 was performed on your FriMi ID 2222***950 for LKR 315.33", "date":"28-Aug-2019 09:30"},
-      {"heading":"Pos Transaction", "content":"Thank you for paying Uber BV Vorden from your FriMi ID 2222XXXX50 LKR 327.66", "date":"28-Aug-2019 09:30"},
-      {"heading":"Fund Transfer", "content":"FUNDTRANSFER TO 2003**688 was performed on your FriMi ID 2222**950 for LKR 4,760.00", "date":"28-Aug-2019 09:30"},
-      {"heading":"Cash Deposit", "content":"Fund Transfer From  was performed on your FriMi ID 2222***950 for LKR 10,000.00", "date":"28-Aug-2019 09:30"}
+      {"heading":"Pos Transaction", "ammount":"10000.00", "date":"28-Aug-2019 09:30", "type": "debit", "description":"from account 100019822"},
+      {"heading":"Pos Transaction","ammount":"1500.00" , "date":"28-Aug-2019 09:30", "type": "credit", "description":"from malabe branch"}, 
+      {"heading":"Fund Transfer","ammount":"8000.00" , "date":"28-Aug-2019 09:30", "type": "credit", "description":"from malabe branch"},
+      {"heading":"Cash Deposit", "ammount":"1400.00" , "date":"28-Aug-2019 09:30", "type": "debit", "description":"intrest"}
     ];
   }
 

@@ -9,8 +9,10 @@ import {  MenuController  } from 'ionic-angular';
 })
 export class AccountDetailsPage {
 
-  offers: any;
+  account: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public menuCtrl: MenuController) {
+    
+    this.account = navParams.get('account');
     //this.menuCtrl.enable(false, 'menuSlider');
     this.offers = [
       {"heading":"Pizza Hut Offer", "content":"Buy one large pizza at Pizza Hut and get regular pizza free", "date":"28-Aug-2019 09:30"},

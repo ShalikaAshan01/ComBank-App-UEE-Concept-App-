@@ -14,7 +14,7 @@ import { IonicPage, NavController, Nav, App } from 'ionic-angular';
   templateUrl: 'menu-slider-mobilebanking.html',
 })
 export class MenuSliderMobilebankingPage {
-  rootPage = 'NotificationsPage';
+  rootPage = 'DashboardPage';
 
   @ViewChild(Nav) nav: Nav;
 
@@ -25,7 +25,7 @@ export class MenuSliderMobilebankingPage {
 
   ionViewDidLoad() {
     this.pages = [
-      { title: 'DASHBOARD', pageName: 'SettingsPage', icon: 'md-analytics' },
+      { title: 'DASHBOARD', pageName: 'DashboardPage', icon: 'md-analytics' },
       { title: 'FUND TRANSFER', pageName: 'LocateUsPage', icon: 'md-repeat' },
       { title: 'NOTIFICATIONS', pageName: 'NotificationsPage', icon: 'md-notifications' },
       { title: 'LOCATE US', pageName: 'LocateUsPage', icon: 'md-pin' },

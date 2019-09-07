@@ -33,7 +33,7 @@ export class MenuSliderPassbookPage {
 
   openPage(page: any) {
     let params = {};
-    this.nav.setRoot(page.pageName, params);
+    this.nav.push(page.pageName, params);
   }
 
   isActive(page: any) {

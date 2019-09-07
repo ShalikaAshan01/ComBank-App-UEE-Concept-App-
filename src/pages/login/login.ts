@@ -38,10 +38,10 @@ export class LoginPage {
     console.log(this.data)
     if(this.ePassbook){
       this.events.publish('type:ePassbook');
-      this.navCtrl.setRoot('NotificationPage');
+      this.navCtrl.setRoot('AccountListPage');
     }else{
       this.events.publish('type:mobileBanking');
-      this.navCtrl.setRoot('NotificationPage');
+      this.navCtrl.setRoot('AccountsPage');
     }
   }
 }

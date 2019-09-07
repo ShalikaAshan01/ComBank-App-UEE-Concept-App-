@@ -36,6 +36,7 @@ $app-direction: ltr;
 $colors: (
   primary:    #488aff,
   secondary:  #32db64,
+  secondaryDark:#1ea346,
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222,
@@ -43,7 +44,11 @@ $colors: (
   menuHeader: #2C2C2C
 );
 
-
+$searchbar-ios-background-color: rgb(255, 255, 255);
+$searchbar-ios-input-search-icon-color:  #488aff;
+$searchbar-ios-border-color:  #488aff;
+$searchbar-ios-padding-horizontal: 5px;
+$searchbar-ios-input-placeholder-color:  #488aff;
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here

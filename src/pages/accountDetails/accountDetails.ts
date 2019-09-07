@@ -2,19 +2,12 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {  MenuController  } from 'ionic-angular';
 
-/**
- * Generated class for the OffersPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
-  selector: 'page-offers',
-  templateUrl: 'offers.html',
+  selector: 'page-accountDetails',
+  templateUrl: 'accountDetails.html',
 })
-export class OffersPage {
+export class AccountDetailsPage {
 
   offers: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public menuCtrl: MenuController) {

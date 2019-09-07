@@ -1,15 +1,17 @@
-#ionCard {
+#ionCardAccounts {
     ion-card{
-        background-color: rgb(233, 233, 236);
+        background-color: rgba(9, 102, 241, 0.014);
 
         ion-card-header{
+            color: #488aff;
             font-size: 20px;
             font-weight: bold;
+            margin-bottom: -25px;            
         }
     }    
 }
 [text-color="my-custom-color"] {
-    color: rgb(0, 0, 0);
+    color: rgba(255, 255, 255, 0.945);
 }
 
 .menu-title {

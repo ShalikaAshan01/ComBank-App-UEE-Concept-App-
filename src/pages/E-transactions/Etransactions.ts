@@ -10,10 +10,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-transactions',
-  templateUrl: 'transactions.html',
+  selector: 'page-Etransactions',
+  templateUrl: 'Etransactions.html',
 })
-export class TransactionsPage {
+export class ETransactionsPage {
 
   transactions:any;
 

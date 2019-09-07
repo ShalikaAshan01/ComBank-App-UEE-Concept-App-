@@ -19,7 +19,7 @@
         ion-label {
             display: flex;
             align-items: center;
-            font-size: 1.8rem;
+            font-size: 1.8rem !important;
             font-weight: 100 !important;
             margin-top: 1px;
             margin-bottom: 4px;
@@ -30,3 +30,10 @@
         }
     }
   }
+
+  .button-primary {
+    height: 50px !important;
+    border-radius: 10px !important;
+    font-size: 20px !important;
+  }
+  

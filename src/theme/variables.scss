@@ -34,8 +34,8 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
+  primary: #006eb9,
+  secondary: #28a745,
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222,
@@ -44,26 +44,19 @@ $colors: (
 );
 
 
+$toolbar-background: #006eb9;
+
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
-
-
-
 
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 
-
-
-
 // App Windows Variables
 // --------------------------------------------------
 // Windows only Sass variables can go here
-
-
-
 
 // App Theme
 // --------------------------------------------------
@@ -74,7 +67,6 @@ $colors: (
 
 @import "ionic.theme.default";
 
-
 // Ionicons
 // --------------------------------------------------
 // The premium icon font for Ionic. For more info, please see:
@@ -82,9 +74,17 @@ $colors: (
 
 @import "ionic.ionicons";
 
-
 // Fonts
 // --------------------------------------------------
 
-@import "roboto";
+// @import url("https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700&display=swap");
 @import "noto-sans";
+
+@font-face {
+  font-family: Maven-Pro;
+  src: url("../assets/fonts/MavenPro-Regular.ttf");
+}
+
+* {
+  font-family: Maven-Pro;
+}

@@ -26,7 +26,7 @@ export class MenuSliderMobilebankingPage {
   ionViewDidLoad() {
     this.pages = [
       { title: 'DASHBOARD', pageName: 'DashboardPage', icon: 'md-analytics' },
-      { title: 'FUND TRANSFER', pageName: 'LocateUsPage', icon: 'md-repeat' },
+      { title: 'FUND TRANSFER', pageName: 'FundTransferPage', icon: 'md-repeat' },
       { title: 'NOTIFICATIONS', pageName: 'NotificationsPage', icon: 'md-notifications' },
       { title: 'LOCATE US', pageName: 'LocateUsPage', icon: 'md-pin' },
       { title: 'EXCHANGE RATES', pageName: 'ExchangeRatesPage', icon: 'md-trending-up' },

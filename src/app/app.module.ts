@@ -6,7 +6,12 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { LoginPageModule } from '../pages/login/login.module';
+import { ConnectivityServiceProvider } from '../providers/connectivity-service/connectivity-service';
+import {RateProvider} from '../providers/rate/rate';
+import { Geolocation }              from '@ionic-native/geolocation';
+import { HttpModule }               from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+import { Network }                  from '@ionic-native/network';
 
 @NgModule({
   declarations: [
@@ -15,18 +20,25 @@ import { LoginPageModule } from '../pages/login/login.module';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
-    LoginPageModule
+    IonicModule.forRoot(MyApp, {
+      tabsPlacement: 'top',
+    }),
+    HttpModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
+    HomePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ConnectivityServiceProvider,
+    Geolocation,
+    Network,
+    RateProvider
   ]
 })
 export class AppModule {}

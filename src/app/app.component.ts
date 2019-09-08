@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { LoadingController, Events, Nav, App, Platform } from 'ionic-angular';
+import { LoadingController, Events, App, Platform } from 'ionic-angular';
 
 @Component({
   templateUrl: 'app.html'

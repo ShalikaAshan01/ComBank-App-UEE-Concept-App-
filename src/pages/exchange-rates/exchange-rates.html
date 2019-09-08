@@ -23,5 +23,18 @@
 </ion-header>
 
 <ion-content padding>
-
+  <ion-card>
+      <ion-row>
+          <ion-col><h2>Currency</h2></ion-col>
+          <ion-col><h2>Buying</h2></ion-col>
+          <ion-col><h2>Selling</h2></ion-col>
+        </ion-row>
+  </ion-card>
+  <ion-card *ngFor="let rate of exchangeRates">
+    <ion-row>
+        <ion-col>{{rate.currency}}</ion-col>
+        <ion-col>{{rate.buy}}</ion-col>
+        <ion-col>{{rate.sell}}</ion-col>
+      </ion-row>
+    </ion-card>
 </ion-content>

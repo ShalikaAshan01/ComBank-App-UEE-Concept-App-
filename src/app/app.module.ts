@@ -20,7 +20,9 @@ import { Network }                  from '@ionic-native/network';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp, {
+      tabsPlacement: 'top',
+    }),
     HttpModule,
     HttpClientModule
   ],

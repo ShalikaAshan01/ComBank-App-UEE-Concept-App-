@@ -34,4 +34,7 @@ export class AccountListPage {
     this.navCtrl.push('NotificationsPage');
   }
 
+  openPage(){
+    this.navCtrl.push('AccountsPage')
+  }
 }

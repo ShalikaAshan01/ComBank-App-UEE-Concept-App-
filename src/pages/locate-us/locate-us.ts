@@ -3,9 +3,7 @@ import {
   Platform,
   ViewController,
   IonicPage,
-  NavParams,
-  ModalController,
-  ModalOptions
+  NavParams
 } from 'ionic-angular';
 
 import {
@@ -43,7 +41,6 @@ export class LocateUsPage {
   saveDisabled: boolean;
   location: any;
   locations: any;
-  private modalOptions: ModalOptions;
   userPosition: any;
   searchText = 'Search for a Location'
 
@@ -68,7 +65,6 @@ export class LocateUsPage {
     public platform: Platform,
     public geolocation: Geolocation,
     public navparams: NavParams,
-    private modalCtrl: ModalController,
     public viewCtrl: ViewController,
     public http: Http, public connectivityService: ConnectivityServiceProvider) {
     this.saveDisabled = true;
@@ -276,10 +272,10 @@ export class LocateUsPage {
   }
 
   addMarker(location: any): void {
-
+    var image;
     // console.log(location);
     if (this.segment == 'branch') {
-      var image = {
+      image = {
         url: 'assets/imgs/bank.png',
         // This marker is 20 pixels wide by 32 pixels high.
         size: new google.maps.Size(20, 32),
@@ -290,7 +286,7 @@ export class LocateUsPage {
       };
     }
     if (this.segment == 'atm') {
-      var image = {
+      image = {
         url: 'assets/imgs/atm.png',
         // This marker is 20 pixels wide by 32 pixels high.
         size: new google.maps.Size(20, 32),

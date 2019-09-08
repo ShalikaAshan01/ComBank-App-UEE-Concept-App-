@@ -1,7 +1,9 @@
 #ionCard {
     ion-card{
-        background-color: rgb(233, 233, 236);
-
+        // background-color: rgb(233, 233, 236);
+        p{
+            font-weight: bold;
+        }
         ion-card-header{
             font-size: 20px;
             font-weight: bold;

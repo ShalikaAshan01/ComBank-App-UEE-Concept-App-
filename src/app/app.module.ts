@@ -12,6 +12,11 @@ import { Geolocation }              from '@ionic-native/geolocation';
 import { HttpModule }               from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { Network }                  from '@ionic-native/network';
+import { FIREBASE_CONFIG }          from './app.firebase.config';
+import * as firebase from 'firebase';
+
+
+firebase.initializeApp(FIREBASE_CONFIG);
 
 @NgModule({
   declarations: [

@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { Network }                  from '@ionic-native/network';
 import { FIREBASE_CONFIG }          from './app.firebase.config';
 import * as firebase from 'firebase';
+import { AccountProvider } from '../providers/account/account';
 
 
 firebase.initializeApp(FIREBASE_CONFIG);
@@ -43,7 +44,8 @@ firebase.initializeApp(FIREBASE_CONFIG);
     ConnectivityServiceProvider,
     Geolocation,
     Network,
-    RateProvider
+    RateProvider,
+    AccountProvider
   ]
 })
 export class AppModule {}

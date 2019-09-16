@@ -1,14 +1,14 @@
 <ion-header>
   <ion-navbar hideBackButton color="primary">
-      <ion-buttons left>
-          <button ion-button menuToggle style="display: block !important;">
-              <ion-icon name="md-list" color="light"></ion-icon>
-            </button>
-      </ion-buttons>
+    <ion-buttons left>
+      <button ion-button menuToggle style="display: block !important;">
+        <ion-icon name="md-list" color="light"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>
       <span text-color="light"> Mobile Banking Settings </span>
     </ion-title>
-  </ion-navbar>  
+  </ion-navbar>
 </ion-header>
 
 <ion-content padding>
@@ -17,12 +17,6 @@
     <div class="user-name" padding-top="5px">John Doe</div>
   </div>
 
-  <ion-card class="border-left-success">
-    <ion-card-content>
-      <span class="custom-card-hint">Account Number</span>
-      <div class="custom-card-content">22352536852</div>
-    </ion-card-content>
-  </ion-card>
   <ion-card class="border-left-primary">
     <ion-card-content>
       <span class="custom-card-hint">Contact Number</span>
@@ -40,9 +34,32 @@
       <div class="custom-card-content">Malabe</div>
     </ion-card-content>
   </ion-card>
+  <br>
 
   <div>
-    <span class="text-md-danger">NOTE: Be sure to keep your details updated with Commercial bank.</span>
+    <h6 class="text-md-danger">NOTE: Be sure to keep your details updated with Commercial bank.</h6>
+  </div>
+  <br>
+
+  <div>
+    <button ion-button block class="settings-button" (click)="showSettings(1)">Change Password</button>
+    <ion-card *ngIf="items[1]">
+      <ion-card-content>
+        <ion-item>
+          <ion-label floating>Old Password</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>New Password</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Confirm Password</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+        <button ion-button block color="secondary" class="settings-button">DONE</button>
+      </ion-card-content>
+    </ion-card>
   </div>
 
 </ion-content>

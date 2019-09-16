@@ -32,7 +32,7 @@ export class MenuSliderMobilebankingPage {
       { title: 'EXCHANGE RATES', pageName: 'ExchangeRatesPage', icon: 'md-trending-up' },
       { title: 'INTEREST RATES', pageName: 'InterestRatesPage', icon: 'md-podium' },
       { title: 'HELP', pageName: 'HelpPage', icon: 'md-help-circle' },
-      { title: 'PRIVACY POLICY', pageName: 'PrivacyPolicyPage', icon: 'md-lock' },
+      // { title: 'PRIVACY POLICY', pageName: 'PrivacyPolicyPage', icon: 'md-lock' },
       { title: 'CONTACT US', pageName: 'ContactUsPage', icon: 'md-information-circle' },
       { title: 'MOBILE BANKING SETTINGS', pageName: 'MobileBankingProfileSettingsPage', icon: 'md-settings' },
     ];

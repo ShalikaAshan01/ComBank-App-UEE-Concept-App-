@@ -1,5 +1,7 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
+import * as firebase from 'firebase';
+import 'firebase/firestore';
 
 /*
   Generated class for the RateProvider provider.
@@ -9,19 +11,19 @@ import {Injectable} from '@angular/core';
 */
 @Injectable()
 export class RateProvider {
-
   constructor(public http: HttpClient) {
   }
 
   getInterestRates() {
     return new Promise(resolve => {
-      this.http.get('/assets/json/interest_rates.json').subscribe(data => {
-        resolve(data);
+      firebase.firestore().collection('interestRates').doc('rates').get().
+      then(data => {
+        if(data.exists){
+          resolve(data.data());
+        }
       }, err => {
         console.log(err);
       });
     });
   }
-
-
 }

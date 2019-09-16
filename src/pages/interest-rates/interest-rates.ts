@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {IonicPage, LoadingController, NavController, NavParams} from 'ionic-angular';
 import {RateProvider} from "../../providers/rate/rate";
 
 /**
@@ -25,17 +25,27 @@ export class InterestRatesPage {
   aliveOthers: any;
   segment: string = "s";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private rateProvider: RateProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private rateProvider: RateProvider, public loadingCtrl: LoadingController) {
     this.getInterestRates();
   }
 
   getInterestRates() {
+
+    let loading = this.loadingCtrl.create({
+      content: 'Please wait...'
+    });
+
+    loading.present();
+
     this.rateProvider.getInterestRates()
       .then(data => {
         this.data = data;
+
         this.savings = this.data.savings_accounts;
         this.deposits = this.data.deposits;
         this.others = this.data.other;
+
+        loading.dismiss();
 
         //declaring alive arrays for show/hide
         this.aliveSaving = new Array(this.data.savings_accounts.length).fill(false);

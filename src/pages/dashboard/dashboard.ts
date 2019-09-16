@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import * as firebase from 'firebase';
+import 'firebase/firestore';
 
 /**
  * Generated class for the DashboardPage page.
@@ -15,6 +17,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class DashboardPage {
 
+  db: any;
   total: any = 0;
   account1: any;
   account2: any;
@@ -28,12 +31,13 @@ export class DashboardPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
-    this.userAccounts = [
-      { 'currency': 'LKR', 'accountBalance': 107458.14, 'accountNumber': '8480025479', 'cardNumber': '5247 8745 6598 3541', 'cardName': 'Godamune G.A.P.J.', 'expiry': '05/24', 'accountType': 'Savings Account', 'cardType': 'VISA' },
-      { 'currency': 'LKR', 'accountBalance': 107458.25, 'accountNumber': '8480025479', 'cardNumber': '5247 8745 6598 3541', 'cardName': 'Godamune G.A.P.J.', 'expiry': '05/24', 'accountType': 'Savings Account', 'cardType': 'MASTER' },
-      { 'currency': 'LKR', 'accountBalance': 107458.25, 'accountNumber': '8480025479', 'cardNumber': '5247 8745 6598 3541', 'cardName': 'Godamune G.A.P.J.', 'expiry': '05/24', 'accountType': 'Savings Account', 'cardType': 'VISA' }
-    ];
-
+    // this.userAccounts = [
+    //   { 'currency': 'LKR', 'accountBalance': 107458.14, 'accountNumber': '8480025479', 'cardNumber': '5247 8745 6598 3541', 'cardName': 'Godamune G.A.P.J.', 'expiry': '05/24', 'accountType': 'Savings Account', 'cardType': 'VISA' },
+    //   { 'currency': 'LKR', 'accountBalance': 107458.25, 'accountNumber': '8480025479', 'cardNumber': '5247 8745 6598 3541', 'cardName': 'Godamune G.A.P.J.', 'expiry': '05/24', 'accountType': 'Savings Account', 'cardType': 'MASTER' },
+    //   { 'currency': 'LKR', 'accountBalance': 107458.25, 'accountNumber': '8480025479', 'cardNumber': '5247 8745 6598 3541', 'cardName': 'Godamune G.A.P.J.', 'expiry': '05/24', 'accountType': 'Savings Account', 'cardType': 'VISA' }
+    // ];
+    this.db = firebase.firestore();
+    this.loadData();
     this.cardColours = [
       "background: transparent linear-gradient(295deg, #001848 0%, #004093 100%) 0% 0% no-repeat padding-box;"
     ];
@@ -42,12 +46,41 @@ export class DashboardPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DashboardPage');
-
+    this.loadData();
     this.currentLogin = new Date();
     this.lastVisit = new Date();
 
-    this.calculateTotalBalance(this.userAccounts);
+  }
+  
+  loadData() {
+    this.getData('userAccounts').then((data) => {
+      this.userAccounts = data;
+      this.calculateTotalBalance(this.userAccounts);
+    });
+  }
 
+  getData(collectionName: String) {
+    return new Promise((resolve, reject) => {
+      this.db.collection(collectionName)
+        .get()
+        .then((querySnapshot) => {
+          let arr = [];
+          querySnapshot.forEach(function (doc) {
+            var obj = JSON.parse(JSON.stringify(doc.data()));
+            obj.$key = doc.id
+            arr.push(obj);
+          });
+
+          if (arr.length > 0) {
+            resolve(arr);
+          } else {
+            resolve(null);
+          }
+        })
+        .catch((error: any) => {
+          reject(error);
+        });
+    });
   }
 
   calculateTotalBalance(userAccounts: any) {
@@ -58,7 +91,7 @@ export class DashboardPage {
     this.total = temp;
   }
 
-  openNotificationPage(){
+  openNotificationPage() {
     this.navCtrl.push('NotificationsPage');
   }
 }
